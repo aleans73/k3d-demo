@@ -1,6 +1,8 @@
 # spring-k3d-demo
 
 ## Prerequisites
+- JDK 1.8 or later
+- Maven 3.6.x or later
 - Docker on WSL2
 - Homebrew (https://brew.sh/)
   ```console
