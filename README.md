@@ -22,7 +22,7 @@
 - Build docker image
   ```console
   mvn clean install
-  docker build -t k3d/spring .
+  docker build -t spring-k3d-demo .
 - Test image
   ```console
   docker run -p 8080:8080 --name myapp spring-k3d-demo
