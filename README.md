@@ -25,7 +25,8 @@
   docker build -t spring-k3d-demo .
 - Test image
   ```console
-  docker run -p 8080:8080 --name myapp spring-k3d-demo
+  docker run -p 8080:8080 -d spring-k3d-demo
+  curl localhost:8080/greet/John
   docker container prune
 - Push image into local repository
   ```console    docker tag spring-k3d-demo k3d-myregistry.localhost:5111/spring-k3d-demo
