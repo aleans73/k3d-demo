@@ -38,10 +38,16 @@
 - Create namespace
   ```console
   kubectl create namespace dev
-- Deploy
+- Deploy the application
   ```console
   kubectl apply -n dev -f k3d/configmap.yaml
   kubectl apply -n dev -f k3d/secret.yaml
   kubectl apply -n dev -f k3d/deployment.yaml
+- Health checks
+  ```console
+  kubectl get events -n dev
+- External access to the application
+  ```console
   kubectl apply -n dev -f k3d/service.yaml
-  kubectl apply -n dev -f k3d/service.yaml
+  kubectl apply -n dev -f k3d/ingress.yaml
+  curl myapp.localhost:8081/greet/John
