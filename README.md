@@ -30,7 +30,8 @@
   docker stop myapp
   docker rm myapp
 - Push image into local repository
-  ```console    docker tag spring-k3d-demo k3d-myregistry.localhost:5111/spring-k3d-demo
+  ```console
+  docker tag spring-k3d-demo k3d-myregistry.localhost:5111/spring-k3d-demo
   docker push k3d-myregistry.localhost:5111/spring-k3d-demo
   
 ## Kubectl
