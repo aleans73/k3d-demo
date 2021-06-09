@@ -51,3 +51,21 @@
   kubectl apply -n dev -f k3d/service.yaml
   kubectl apply -n dev -f k3d/ingress.yaml
   curl myapp.localhost:8081/greet/John
+  
+## Collecting metrics with Prometheus
+- Add the prometheus-community repo
+  ```console
+  helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+- Install Prometheus
+  ```console  
+  helm install prometheus prometheus-community/prometheus -n kube-system
+  kubectl apply -f k3d/prometheus.yaml -n kube-system
+- With your browser, connect to the Prometheus web UI: http://prometheus.localhost:8081
+- Querying some metrics with 
+- sum by (instance) (
+  irate(
+    container_cpu_usage_seconds_total{
+      namespace="dev"
+      }[5m]
+  )
+)
