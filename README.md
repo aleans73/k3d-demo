@@ -61,11 +61,15 @@
   helm install prometheus prometheus-community/prometheus -n kube-system
   kubectl apply -f k3d/prometheus.yaml -n kube-system
 - With your browser, connect to the Prometheus web UI: http://prometheus.localhost:8081
-- Querying some metrics with 
-- sum by (instance) (
+- Querying some metrics
+  * Click on "Graph", and in "expression", paste the following:
+  ```javascript 
+  sum by (instance) (
   irate(
     container_cpu_usage_seconds_total{
       namespace="dev"
       }[5m]
+    )
   )
-)
+  ```
+  * Click on the blue "Execute" button  
